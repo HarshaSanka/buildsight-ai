@@ -1,0 +1,12 @@
+flowchart TD
+  N0["Browser + API client<br/>Local synthetic demonstration"]
+  N1["FastAPI boundary<br/>Validation · shared API key"]
+  N0 --> N1
+  N2["LangGraph workflows<br/>RFI · schedule · risk · human interrupt"]
+  N1 --> N2
+  N3["Knowledge + analysis<br/>TF-IDF citations · NetworkX relationships"]
+  N2 --> N3
+  N4["Local persistence + sources<br/>SQLite checkpoints · synthetic JSON"]
+  N3 --> N4
+  N5["Simulated vendor interfaces<br/>Mock Procore RFIs · mock Autodesk metadata"]
+  N4 --> N5

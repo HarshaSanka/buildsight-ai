@@ -1,0 +1,108 @@
+{
+  "project": {
+    "id": "BR-101",
+    "name": "Synthetic River Crossing",
+    "as_of": "2026-11-07",
+    "disclaimer": "Entirely fictional. No Kokosing, Procore or Autodesk customer data."
+  },
+  "documents": [
+    {
+      "id": "SPEC-0330",
+      "title": "Concrete placement specification",
+      "section": "3.2",
+      "text": "Bridge deck concrete placement requires approved mix design and resolved reinforcing conflicts before the pour. The superintendent must obtain engineer review before changing reinforcement."
+    },
+    {
+      "id": "RFI-014",
+      "title": "Deck reinforcing conflict",
+      "section": "description",
+      "text": "Open RFI-014: deck reinforcing conflicts with embedded drainage at pier P2. Engineer response is due 2026-11-09. Activity ACT-030 cannot start until this RFI is resolved."
+    },
+    {
+      "id": "DAILY-1107",
+      "title": "Daily field report",
+      "section": "observations",
+      "text": "Pier P2 deck forming is complete. Reinforcing inspection is pending. Crane inspection is current. Rain is forecast; verify field conditions before concrete placement."
+    },
+    {
+      "id": "SUB-008",
+      "title": "Concrete mix submittal",
+      "section": "status",
+      "text": "SUB-008 mix design is approved for ACT-030. Approval does not resolve the open reinforcing conflict in RFI-014."
+    },
+    {
+      "id": "PLAN-001",
+      "title": "Lookahead schedule",
+      "section": "activities",
+      "text": "ACT-030 bridge deck pour is planned for 2026-11-10 with zero float. ACT-040 curing follows ACT-030. ACT-050 barrier installation follows curing."
+    },
+    {
+      "id": "SAFETY-001",
+      "title": "Field decision boundary",
+      "section": "policy",
+      "text": "BuildSight is advisory software. A qualified engineer and field leadership must review constructability, safety and schedule decisions. Software cannot authorize field work."
+    }
+  ],
+  "activities": [
+    {
+      "id": "ACT-010",
+      "name": "Deck forming",
+      "start": "2026-11-03",
+      "finish": "2026-11-06",
+      "float_days": 2,
+      "status": "complete",
+      "predecessors": []
+    },
+    {
+      "id": "ACT-030",
+      "name": "Bridge deck pour",
+      "start": "2026-11-10",
+      "finish": "2026-11-10",
+      "float_days": 0,
+      "status": "planned",
+      "predecessors": [
+        "ACT-010"
+      ]
+    },
+    {
+      "id": "ACT-040",
+      "name": "Deck curing",
+      "start": "2026-11-11",
+      "finish": "2026-11-17",
+      "float_days": 0,
+      "status": "planned",
+      "predecessors": [
+        "ACT-030"
+      ]
+    },
+    {
+      "id": "ACT-050",
+      "name": "Barrier installation",
+      "start": "2026-11-18",
+      "finish": "2026-11-20",
+      "float_days": 1,
+      "status": "planned",
+      "predecessors": [
+        "ACT-040"
+      ]
+    }
+  ],
+  "rfis": [
+    {
+      "id": "RFI-014",
+      "status": "open",
+      "due": "2026-11-09",
+      "activity": "ACT-030",
+      "element": "BIM-P2",
+      "document": "RFI-014"
+    }
+  ],
+  "elements": [
+    {
+      "id": "BIM-P2",
+      "name": "Pier P2 deck",
+      "type": "bridge_deck",
+      "source": "synthetic metadata; no geometry or IFC parsing"
+    }
+  ]
+}

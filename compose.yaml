@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      BUILDSIGHT_API_KEY: ${BUILDSIGHT_API_KEY:-local-demo-key}
+    volumes:
+      - buildsight-state:/app/state
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  buildsight-state:

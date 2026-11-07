@@ -1,0 +1,27 @@
+name: Verify and package
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.lock
+      - run: ruff check .
+      - run: pytest -q
+      - run: python scripts/evaluate.py
+      - run: docker build -t buildsight-ai:test .
+      - run: |
+          docker run -d --name buildsight -p 127.0.0.1:8000:8000 buildsight-ai:test
+          for attempt in $(seq 1 20); do
+            curl --fail http://127.0.0.1:8000/health && break
+            sleep 2
+          done
+          curl --fail http://127.0.0.1:8000/health
+      - if: always()
+        run: docker logs buildsight || true

@@ -1,0 +1,8 @@
+flowchart TD
+  D["Synthetic records"] --> I["Fit TF-IDF index"]
+  Q["Authenticated question"] --> V["Query vector"]
+  I --> R["Cosine ranking; top 3 above 0.05"]
+  V --> R
+  R --> H{Evidence found?}
+  H -->|Yes| A["Exact excerpts with citations"]
+  H -->|No| B["Insufficient evidence; abstain"]

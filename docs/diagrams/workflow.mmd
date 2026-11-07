@@ -1,0 +1,13 @@
+flowchart TD
+  S["START"] --> R["Retrieve evidence"] --> A["Analyze blockers"]
+  A --> F["RFI specialist"]
+  A --> C["Schedule specialist"]
+  A --> K["Risk specialist"]
+  F --> H["SQLite checkpoint + human interrupt"]
+  C --> H
+  K --> H
+  H --> D["Authenticated Command resume"]
+  D --> Y["Approved local record"]
+  D --> N["Rejected local record"]
+  Y --> E["END; no external writes"]
+  N --> E
