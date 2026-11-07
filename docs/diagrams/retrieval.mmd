@@ -6,3 +6,4 @@ flowchart TD
   R --> H{Evidence found?}
   H -->|Yes| A["Exact excerpts with citations"]
   H -->|No| B["Insufficient evidence; abstain"]
+  A -.-> O["Optional Ollama synthesis; validate IDs and quotes; fallback to excerpts"]

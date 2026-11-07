@@ -69,6 +69,8 @@ The adapter calls Ollama `/api/chat`, requests structured claims, and verifies e
 ruff check .
 pytest -q
 python scripts/evaluate.py
+# With the API running in another terminal:
+python scripts/smoke.py
 ```
 
 See [verification](docs/VERIFICATION.md) for observed results and remaining validation limits. The five-query evaluation measures fixture Recall@3 and quotation integrity; it does not establish real-world accuracy.

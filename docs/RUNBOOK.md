@@ -69,7 +69,7 @@ Use Uvicorn logs to investigate availability and HTTP errors. Avoid logging keys
 
 ## Demonstration checklist
 
-- Confirm the screen clearly says synthetic and no LLM/vendor connection.
+- Confirm the screen clearly says synthetic, identifies its generation mode and discloses simulated vendor connections.
 - Search for reinforcing conflict and read exact citations.
 - Show graph blocker/predecessor edges.
 - Start each specialist branch and explain its distinct draft.

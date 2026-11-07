@@ -23,5 +23,6 @@ jobs:
             sleep 2
           done
           curl --fail http://127.0.0.1:8000/health
+      - run: python scripts/smoke.py
       - if: always()
         run: docker logs buildsight || true

@@ -6,7 +6,7 @@
 
 ## ADR-002: Lexical extractive baseline
 
-**Decision:** use TF-IDF/cosine retrieval and exact excerpts. **Reason:** deterministic, low cost, offline and easy to audit. **Tradeoff:** poor synonym recall and no model synthesis. **Revisit:** when an independent query set can measure semantic retrieval and grounded generation improvements.
+**Decision:** use TF-IDF/cosine retrieval and exact excerpts. **Reason:** deterministic, low cost, offline and easy to audit. **Tradeoff:** poor synonym recall; optional local synthesis adds model uncertainty. **Revisit:** when an independent query set can measure semantic retrieval and grounded generation improvements.
 
 ## ADR-003: Real LangGraph approval lifecycle
 
