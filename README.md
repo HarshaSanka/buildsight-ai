@@ -1,5 +1,7 @@
 # BuildSight AI
 
+[![Verify and package](https://github.com/HarshaSanka/buildsight-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/HarshaSanka/buildsight-ai/actions/workflows/ci.yml)
+
 **Construction evidence search and engineer-reviewed operations workflows.** A working personal portfolio project by Harsha Sanka, created to demonstrate applied construction AI engineering skills. Independent of Kokosing and all named vendors; no affiliation or deployment is implied.
 
 ![Architecture](docs/diagrams/architecture.svg)
